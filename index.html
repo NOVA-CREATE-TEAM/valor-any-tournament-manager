@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOVA Tournament Manager</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">N</span><div><strong>NOVA</strong><small>TOURNAMENT</small></div></div>
+    <nav>
+      <button class="nav-item active" data-view="dashboard">⌂ <span>ダッシュボード</span></button>
+      <button class="nav-item" data-view="tournaments">🏆 <span>大会管理</span></button>
+      <button class="nav-item" data-view="teams">👥 <span>チーム管理</span></button>
+      <button class="nav-item" data-view="matches">⚔ <span>試合管理</span></button>
+      <button class="nav-item" data-view="bracket">◇ <span>トーナメント</span></button>
+      <button class="nav-item" data-view="players">◉ <span>選手管理</span></button>
+      <button class="nav-item" data-view="announcements">▣ <span>大会運営</span></button>
+      <button class="nav-item" data-view="analytics">▥ <span>分析</span></button>
+    </nav>
+    <div class="sidebar-bottom"><button class="nav-item" data-view="settings">⚙ <span>設定</span></button></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar"><div><span class="eyebrow">NOVA CREATE</span><h1 id="page-title">大会管理ダッシュボード</h1></div><div class="top-actions"><span class="live"><i></i> LIVE</span><button class="icon-btn">🔔</button><div class="avatar">NC</div></div></header>
+    <section id="app"></section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
