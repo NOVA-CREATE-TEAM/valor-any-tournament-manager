@@ -7,25 +7,41 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <aside class="sidebar">
-    <div class="brand"><span class="brand-mark">N</span><div><strong>NOVA</strong><small>TOURNAMENT</small></div></div>
-    <nav>
-      <button class="nav-item active" data-view="dashboard">⌂ <span>ダッシュボード</span></button>
-      <button class="nav-item" data-view="tournaments">🏆 <span>大会管理</span></button>
-      <button class="nav-item" data-view="teams">👥 <span>チーム管理</span></button>
-      <button class="nav-item" data-view="matches">⚔ <span>試合管理</span></button>
-      <button class="nav-item" data-view="bracket">◇ <span>トーナメント</span></button>
-      <button class="nav-item" data-view="players">◉ <span>選手管理</span></button>
-      <button class="nav-item" data-view="announcements">▣ <span>大会運営</span></button>
-      <button class="nav-item" data-view="analytics">▥ <span>分析</span></button>
-    </nav>
-    <div class="sidebar-bottom"><button class="nav-item" data-view="settings">⚙ <span>設定</span></button></div>
-  </aside>
+  <div id="auth-screen" class="auth-screen">
+    <div class="auth-panel">
+      <div class="auth-brand"><span class="brand-mark">N</span><div><strong>NOVA</strong><small>TOURNAMENT</small></div></div>
+      <div class="auth-heading"><span class="eyebrow">NOVA CREATE</span><h1 id="auth-title">運営者ログイン</h1><p id="auth-description">大会管理システムにログインしてください。</p></div>
+      <form id="auth-form" class="form">
+        <label>メールアドレス<input id="auth-email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+        <label>パスワード<input id="auth-password" type="password" autocomplete="current-password" placeholder="••••••••" minlength="6" required></label>
+        <button id="auth-submit" class="primary" type="submit">ログイン</button>
+      </form>
+      <div id="auth-message" class="auth-message"></div>
+      <button id="auth-switch" class="text-button" type="button">アカウントを作成する</button>
+    </div>
+  </div>
 
-  <main class="main">
-    <header class="topbar"><div><span class="eyebrow">NOVA CREATE</span><h1 id="page-title">大会管理ダッシュボード</h1></div><div class="top-actions"><span class="live"><i></i> LIVE</span><button class="icon-btn">🔔</button><div class="avatar">NC</div></div></header>
-    <section id="app"></section>
-  </main>
+  <div id="app-shell" class="hidden">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">N</span><div><strong>NOVA</strong><small>TOURNAMENT</small></div></div>
+      <nav>
+        <button class="nav-item active" data-view="dashboard">⌂ <span>ダッシュボード</span></button>
+        <button class="nav-item" data-view="tournaments">▣ <span>大会管理</span></button>
+        <button class="nav-item" data-view="teams">▤ <span>チーム管理</span></button>
+        <button class="nav-item" data-view="matches">◆ <span>試合管理</span></button>
+        <button class="nav-item" data-view="bracket">◇ <span>トーナメント</span></button>
+        <button class="nav-item" data-view="players">◎ <span>選手管理</span></button>
+        <button class="nav-item" data-view="announcements">▥ <span>大会運営</span></button>
+        <button class="nav-item" data-view="analytics">▥ <span>分析</span></button>
+      </nav>
+      <div class="sidebar-bottom"><button class="nav-item" data-view="settings">⚙ <span>設定</span></button></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div><span class="eyebrow">NOVA CREATE</span><h1 id="page-title">大会管理ダッシュボード</h1></div><div class="top-actions"><span id="user-email" class="live"></span><button id="logout" class="icon-btn" type="button">ログアウト</button><div class="avatar">NC</div></div></header>
+      <section id="app"></section>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="app.js"></script>
 </body>
 </html>
