@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NOVA Tournament Manager</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
   <div id="auth-screen" class="auth-screen">
@@ -13,7 +13,7 @@
       <div class="auth-heading"><span class="eyebrow">NOVA CREATE</span><h1 id="auth-title">運営者ログイン</h1><p id="auth-description">大会管理システムにログインしてください。</p></div>
       <form id="auth-form" class="form">
         <label>メールアドレス<input id="auth-email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
-        <label>パスワード<input id="auth-password" type="password" autocomplete="current-password" placeholder="••••••••" minlength="6" required></label>
+        <label>パスワード<input id="auth-password" type="password" autocomplete="new-password" placeholder="6文字以上" minlength="6" required></label>
         <button id="auth-submit" class="primary" type="submit">ログイン</button>
       </form>
       <div id="auth-message" class="auth-message"></div>
@@ -42,6 +42,6 @@
     </main>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="app.js"></script>
+  <script src="app.js?v=4"></script>
 </body>
 </html>
